@@ -1,0 +1,175 @@
+/*--text: #f3eeea;
+--background: #0d0a07;
+--primary: #d1b7a0;
+--secondary: #755133;
+--accent: #c39165;*/
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #EBD180;
+  color: #fff;
+}
+
+/*NE MARCHE PAS SUR FIREFOX*/
+body::-webkit-scrollbar {
+  width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #80C5C5;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color:#EBD180;
+  border-radius: 20px;
+  border: 4px solid #80C5C5;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  background-color: #80C5C5;
+  padding-left: 10px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 4;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+}
+
+.menu li {
+  margin-right: 20px;
+  padding: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #d1b7a0;
+}
+
+.dropdown {
+  padding: 20px;
+  align-items: right;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.dropdown:hover{
+  color: #d1b7a0;
+}
+
+.dropdown-child {
+  display: none;
+  background-color: #80C5C5;
+  min-width: 100px;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 100%;
+}
+
+.dropdown-child a {
+  padding: 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-child {
+  display: block;
+}
+
+img{
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}
+
+.title-container{
+  position: relative;
+}
+
+.title-container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(rgba(0,0,0,0), #EBD180);
+  z-index: 1; 
+}
+
+.title {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 200%;
+  z-index: 3;
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+
+.content{
+  position: relative;
+  margin: 10%;
+}
+
+.sections {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.sections > div {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #80C5C5;
+}
+
+.sections img {
+  border-radius: 10px;
+}
+
+.live{
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.footer{
+  position: relative;
+  display: flex;
+  left: 0;
+  right: 0;
+  bottom: 0%;
+  padding-top: 10px;
+  background-color: #80C5C5;
+  align-items: center;
+  justify-content: center;
+}
